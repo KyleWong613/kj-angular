@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css']
 })
-export class TopBarComponent {
 
+export class TopBarComponent {
+  public Status: string[] = ["Active", "Inactive"];
+
+
+  constructor(private router: Router){
+
+  }
 }
+
 
 
 /*

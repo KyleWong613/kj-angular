@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import * as $ from "jquery";
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductPricesComponent } from './product-prices/product-prices.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -13,12 +17,15 @@ import { ProductListComponent } from './product-list/product-list.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-    ])
+    ]),
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent
+    ProductListComponent,
+    CheckoutComponent,
+    ProductPricesComponent
   ],
   bootstrap: [
     AppComponent

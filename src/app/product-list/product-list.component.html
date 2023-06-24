@@ -1,6 +1,20 @@
 <h2>Products</h2>
 
 
+<form>
+    <div class="mb-3 px-5">
+       <div class="row mb-3">
+        <select class="form-control ph-color" type="number" id="productinfo"  name="productinfo" (ngModelChange)="onChange($event)">
+        <option [ngValue]="null" disabled selected>Product List</option>
+        <option *ngFor="let product of products_list" [value]="product.name">{{product.name}}</option>
+        </select>
+        </div>      
+        <button type="button" class="btn btn-outline-primary"(click)='addProduct()'>Add Product</button>
+    </div>
+</form>
+
+
+
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
