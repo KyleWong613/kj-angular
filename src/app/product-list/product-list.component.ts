@@ -1,19 +1,48 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit, OnDestroy,} from '@angular/core';
 import { products } from '../products';
+export interface ProductDetails
+{
+  name : string,
+  b: string,
+  v: string,
+  s: boolean
+};
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products = products;
 
-  add() {
-    console.log('The product has been added to cart!');
+
+export class ProductListComponent implements OnInit, OnDestroy {
+  products_list = products;
+  defaultPage = 1;
+  name = 1;
+
+  productname: any;
+  addProduct() {
+    
+    console.log(this.productname);
+  }   
+  onChange(event: Event): void {
+    console.log(event);
+    // write your code here
+  }
+  ngOnInit(): void
+  {
+    this.loadPage();
+  }
+  loadPage(): void
+  {
+    this.defaultPage = 1;
+  }
+  
+  ngOnDestroy(): void { 
+
   }
 }
+
 
 
 /*
