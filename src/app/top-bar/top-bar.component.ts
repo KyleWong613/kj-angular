@@ -14,10 +14,6 @@ export class TopBarComponent {
   constructor(private router: Router){
 
   }
-  
- redirect(){
-  console.log('haha');
-}
 }
 
 
