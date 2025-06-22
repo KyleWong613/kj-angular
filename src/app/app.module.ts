@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule,Component, VERSION } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import * as $ from "jquery";
+import {HttpClient,  HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -10,6 +11,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductPricesComponent } from './product-prices/product-prices.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   imports: [
@@ -18,14 +20,16 @@ import { AppRoutingModule } from './app-routing.module';
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
     CheckoutComponent,
-    ProductPricesComponent
+    ProductPricesComponent,
+    PostsComponent
   ],
   bootstrap: [
     AppComponent

@@ -1,0 +1,29 @@
+<h2>Get All Posts</h2>
+
+<button (onclick)="getAllPost()">Get Posts</button>
+
+<ul *ngIf="posts.length > 0">
+  <div
+    class="border: 1px solid #ccc;"
+    *ngFor="let post of totalposts | keyvalue"
+  >
+    <div>
+      <b>User ID: {{ post.key }}</b>
+      <br />
+      <b>ID: {{ post.value }}</b>
+      <br />
+      <b>{{ post.value }}</b>
+      <br />
+      <!-- <b>Title: {{ post.title }}</b> -->
+      <!-- <b>Body: {{ post.body }}</b> -->
+    </div>
+    <br />
+  </div>
+
+  <div *ngIf="selectedId !== null">
+    <div>Title</div>
+    <div>Body</div>
+    <!-- <b>Title: {{ post.title }}</b> -->
+    <!-- <b>Body: {{ post.body }}</b> -->
+  </div>
+</ul>
